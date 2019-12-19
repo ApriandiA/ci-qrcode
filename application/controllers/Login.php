@@ -50,9 +50,13 @@ class Login extends Is_Controller {
                 if ( $barcodeLogin > 0 ) {
                     $user             = $barcode->row_array();
                 }   
-    
+                    
                 if ( password_verify($password, $user['password']) || $key == $user['key'] ) {
                     $sess_data['status'] = 'login';
+                    $sess_data['id_user'] = $user['id_user'];
+                    $sess_data['username'] = $user['username'];
+                    $sess_data['role'] = $user['role'];
+                    $sess_data['key'] = $user['key'];
                     $this->session->set_userdata($sess_data);
                     redirect('user');
                 }  else {

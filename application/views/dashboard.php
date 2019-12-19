@@ -7,7 +7,7 @@
     <title>Dashboard QR code</title>
 </head>
 <body>
-    <h2>Halo <?= $this->session->userdata('name') ?></h2>
+    <h2>Halo <?= $this->session->userdata('username') ?></h2>
     <a href="<?= base_url('user/tambah') ?>">Tambah data</a>
     <a href="<?= base_url('login/logout') ?>">Keluar</a>
 
